@@ -1,0 +1,10 @@
+1. Build and run app commands
+    gradle build
+    java -jar build/libs/account-service-0.0.1-SNAPSHOT.jar
+
+2. H2 console is available from the endpoint:
+    http://localhost:8080/account-service/h2-console/
+
+3. Exported postman collection 'Account Service.postman_collection.json' contains set of requests illustrating
+the way of work with API
+

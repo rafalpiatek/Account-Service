@@ -1,0 +1,610 @@
+{
+	"info": {
+		"_postman_id": "08562b04-9658-4993-ae36-1fd0c2c772b3",
+		"name": "Account Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OTHER CURRENCIES -> NBP INTEGRATION",
+			"item": [
+				{
+					"name": "Create Client with accounts (SUCCESS)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"firstName\" : \"Rafał\",\n\t\"lastName\" : \"Piatek\",\n\t\"initializingAmount\" : \"1000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/account-service/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account EUR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currency\" : \"EUR\",\n\t\"amount\" : \"200\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/account-service/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Client with accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/account-service/clients/60080139847",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"clients",
+								"60080139847"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exchange currency PLN -> USD (SUCCESS)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currencyFrom\" : \"PLN\",\n\t\"currencyTo\" : \"USD\",\n\t\"amount\" : \"100\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/account-service/clients/currencyExchange",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"clients",
+								"currencyExchange"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exchange currency PLN -> EUR (SUCCESS)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currencyFrom\" : \"PLN\",\n\t\"currencyTo\" : \"EUR\",\n\t\"amount\" : \"100\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/account-service/clients/currencyExchange",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"clients",
+								"currencyExchange"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exchange currency EUR -> PLN (SUCCESS)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currencyFrom\" : \"EUR\",\n\t\"currencyTo\" : \"PLN\",\n\t\"amount\" : \"200\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/account-service/clients/currencyExchange",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"clients",
+								"currencyExchange"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "50727625-3e5c-4bb3-9e17-17303afb8393",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "71daa8dc-b549-4403-a156-4634c6ded1e5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "OTHER CURRENCIES -> MONETA INTEGRATION",
+			"item": [
+				{
+					"name": "Create Client with accounts (SUCCESS)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"firstName\" : \"Rafał\",\n\t\"lastName\" : \"Piatek\",\n\t\"initializingAmount\" : \"1000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/account-service/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account EUR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currency\" : \"EUR\",\n\t\"amount\" : \"200\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/account-service/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exchange currency PLN -> USD (SUCCESS)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currencyFrom\" : \"PLN\",\n\t\"currencyTo\" : \"USD\",\n\t\"amount\" : \"100\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/account-service/clients/currencyExchangeFull",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"clients",
+								"currencyExchangeFull"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exchange currency EUR -> USD (SUCCESS)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currencyFrom\" : \"EUR\",\n\t\"currencyTo\" : \"USD\",\n\t\"amount\" : \"100\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/account-service/clients/currencyExchangeFull",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"clients",
+								"currencyExchangeFull"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Client with accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/account-service/clients/60080139847",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account-service",
+								"clients",
+								"60080139847"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Create Client with accounts (SUCCESS)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"firstName\" : \"Rafał\",\n\t\"lastName\" : \"Piatek\",\n\t\"initializingAmount\" : \"1000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account-service/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-service",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Client with accounts (FAILED - NO ADULT)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pesel\" : \"15230384224\",\n\t\"firstName\" : \"Rafał\",\n\t\"lastName\" : \"Piatek\",\n\t\"initializingAmount\" : \"1000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account-service/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-service",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Client with accounts (FAILED - INCORRECT PESEL)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pesel\" : \"5230384224\",\n\t\"firstName\" : \"Rafał\",\n\t\"lastName\" : \"Piatek\",\n\t\"initializingAmount\" : \"1000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account-service/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-service",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Client with accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account-service/clients/60080139847",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-service",
+						"clients",
+						"60080139847"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange currency PLN -> USD (FAILED - NOT SUPPORTED CURRENCY)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currencyFrom\" : \"PLN\",\n\t\"currencyTo\" : \"EUR0\",\n\t\"amount\" : \"1200\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account-service/clients/currencyExchange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-service",
+						"clients",
+						"currencyExchange"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange currency PLN -> USD (FAILED - NOT SUPPORTED CURRENCY EXCHANGE)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currencyFrom\" : \"USD\",\n\t\"currencyTo\" : \"EUR\",\n\t\"amount\" : \"1200\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account-service/clients/currencyExchange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-service",
+						"clients",
+						"currencyExchange"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange currency PLN -> USD (FAILED -> NOT ENOUGH AMOUNT))",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currencyFrom\" : \"PLN\",\n\t\"currencyTo\" : \"USD\",\n\t\"amount\" : \"1200\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account-service/clients/currencyExchange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-service",
+						"clients",
+						"currencyExchange"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange currency PLN -> USD (SUCCESS)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currencyFrom\" : \"PLN\",\n\t\"currencyTo\" : \"USD\",\n\t\"amount\" : \"100\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account-service/clients/currencyExchange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-service",
+						"clients",
+						"currencyExchange"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange currency USD -> PLN (SUCCESS)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pesel\" : \"60080139847\",\n\t\"currencyFrom\" : \"USD\",\n\t\"currencyTo\" : \"PLN\",\n\t\"amount\" : \"20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account-service/clients/currencyExchange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-service",
+						"clients",
+						"currencyExchange"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
